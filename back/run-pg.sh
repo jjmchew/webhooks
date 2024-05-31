@@ -1,3 +1,3 @@
 #! /bin/bash
 
-docker exec -it pg psql -U postgres
+source .env && docker exec -it pg psql -U ${POSTGRES_USER}

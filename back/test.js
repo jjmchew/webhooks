@@ -13,6 +13,10 @@ const testMongo = async () => {
   console.log('mongo data: ', data);
 };
 
-testPg();
-testMongo();
+const main = async() => {
+  await testPg();
+  await testMongo();
+}
+
+main();
 

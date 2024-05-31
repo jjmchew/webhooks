@@ -1,8 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-console.log(process.env.MONGO_USER, process.env.MONGO_PW);
 const connectionString = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PW}@${process.env.MONGO_URL}/miniProj?authSource=admin`;
-// const connectionString = `mongodb://${process.env.MONGO_USER}:{process.env.MONGO_PW}@${process.env.MONGO_URL}/miniProj?authSource=admin`;
 const mongo = new MongoClient(connectionString);
 
 
