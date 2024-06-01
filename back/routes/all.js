@@ -39,7 +39,7 @@ const processBin = async (req) => {
 // receives webhooks and stores them with appropriate binHash
 allRouter.all('/*', async (req, res, next) => {
   console.log('== allRouter all /* :', req.subdomains, req.method, req.path);
-  if (req.subdomains.length === 0) routeToReact(res);
+  if (req.subdomains.length === 0 || req.subdomains[0] === 'www') routeToReact(res);
   else {
     try {
       console.log('in try: ', req.method);
