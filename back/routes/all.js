@@ -7,7 +7,7 @@ const util = require('../lib/utils.js');
 // test
 allRouter.get('/*', (req, res) => {
   console.log('allRouter get /* :', req.subdomains);
-  res.sendFile(path.join(_dirname, '../front/dist/index.html'), (err) => {
+  res.sendFile(req.path.join(__dirname, '../front/dist/index.html'), (err) => {
     if (err) res.status(500).send(err)
   });
 });
