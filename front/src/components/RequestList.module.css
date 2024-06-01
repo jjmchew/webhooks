@@ -1,0 +1,36 @@
+.container {
+  width: 40vw;
+}
+
+.rowWrap {
+  display: flex;
+  flex-direction: row;
+  width: 150%;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.time {
+  width: 20%;
+  font-size: 0.6rem;
+  /* overflow: hidden; */
+}
+
+.method {
+  width: 12%;
+  color: blue;
+}
+
+.path {
+  color: grey;
+  /* overflow: hidden; */
+}
+
+.headers {
+  color: green;
+  /* overflow: hidden; */
+}
+
+.body {
+  /* overflow: hidden; */
+}
