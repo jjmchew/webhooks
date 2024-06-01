@@ -1,3 +1,4 @@
+const path = require('path');
 const allRouter = require('express').Router();
 
 const { useMongo } = require('../db/mongo.js');
@@ -5,11 +6,15 @@ const { usePg } = require('../db/postgres.js');
 const util = require('../lib/utils.js');
 
 // test
-allRouter.get('/*', (req, res) => {
+allRouter.get('/*', (req, res, next) => {
   console.log('allRouter get /* :', req.subdomains);
-  res.sendFile(path.join(__dirname, '../front/dist/index.html'), (err) => {
-    if (err) res.status(500).send(err)
-  });
+  if (req.subdomains.length !== 0) {
+    const newPath = path.join(__dirname, '../front/dist/index.html');
+    console.log('allRouter - no subdomains, passing to index.html', newPath);
+    res.sendFile(newPath, (err) => {
+      if (err) res.status(500).send(err)
+    });
+  } else next();
 });
 
 
