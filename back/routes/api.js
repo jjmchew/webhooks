@@ -11,7 +11,7 @@ apiRouter.get('/', (_, res) => {
 
 
 // return new bin name
-apiRouter.post('/new', (_, res) => {
+apiRouter.post('/new', (req, res) => {
   const binName = util.makeHash(true);
   res.setHeader('Access-Control-Allow-Origin', req.header('origin'));
   res.status(200).send({ binName: binName });
