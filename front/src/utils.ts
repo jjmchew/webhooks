@@ -1,4 +1,4 @@
-const baseURL = 'http://77345.site';
+const baseURL = 'https://77345.site';
 const baseDomain = '77345.site';
 
 const printDateTime = (datetimestr: string): string => {
