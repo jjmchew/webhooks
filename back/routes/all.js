@@ -6,8 +6,13 @@ const { usePg } = require('../db/postgres.js');
 const util = require('../lib/utils.js');
 
 // test
+allRouter.put('/*', (req, res, next) => {
+  console.log('== allRouter put /* :', req.subdomains, req.method, req.path);
+  next();
+});
+
 allRouter.all('/*', (req, res, next) => {
-  console.log('== allRouter /* :', req.subdomains, req.method, req.path);
+  console.log('== allRouter all /* :', req.subdomains, req.method, req.path);
   if (req.subdomains.length === 0) {
     const newPath = path.join('/root/miniProj/front/dist/index.html');
     console.log('allRouter - no subdomains, passing to index.html', newPath);
