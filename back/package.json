@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "testdb": "node --env-file=.env testdb.js",
-    "rundev": "env $(cat .env) nodemon index.js"
+    "rundev": "env $(cat .env) nodemon index.js",
+    "prod": "node --env-file=.env index.js"
   },
   "author": "",
   "license": "ISC",

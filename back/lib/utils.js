@@ -35,7 +35,7 @@ console.log(makeHash(true)); // e.g., 098d-f6b8-dedc
 console.log(isBinHash('098d-f6b8-dedc') === true); 
 console.log(isBinHash('k098d-f6b8-dedc') === false);
 console.log(isRequestHash('4c355-e31e4-e743e') === true);
-console.log(isRequestHash('4c355e31Ie4-e743e') === false);
+console.log(isRequestHash('4c355e31Ie4-e743e') === false);aa
 
 module.exports = {
   makeHash,
