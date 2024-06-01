@@ -11,7 +11,9 @@ const routerFct = (req, res, next) => {
 };
 
 // test
-allRouter.all('*', routerFct);
+allRouter.all('*', (req, res, next) => {
+  console.log('== * :', req.subdomains, req.method, req.path);
+});
 
 allRouter.put('/*', (req, res, next) => {
   console.log('== allRouter put /* :', req.subdomains, req.method, req.path);
