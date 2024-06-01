@@ -7,7 +7,7 @@ const util = require('../lib/utils.js');
 
 // test
 allRouter.all('/*', (req, res, next) => {
-  console.log('allRouter get /* :', req.subdomains);
+  console.log('== allRouter /* :', req.subdomains, req.method);
   if (req.subdomains.length === 0) {
     const newPath = path.join('/root/miniProj/front/dist/index.html');
     console.log('allRouter - no subdomains, passing to index.html', newPath);
@@ -26,7 +26,7 @@ allRouter.all('/*', (req, res, next) => {
 
 allRouter.all('/', async (req, res, next) => {
   const binHash = req.subdomains[0];
-  console.log('allRouter process webhooks', binHash);
+  console.log('== allRouter / (process webhooks route) : ', binHash, req.method);
   try {
     if (!util.isBinHash(binHash)) throw new Error('Invalid bin hash');
   
