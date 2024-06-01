@@ -18,7 +18,7 @@ const DisplayRequests = ({ data, binName }: DisplayRequestsProps) => {
   console.log('DisplayRequests, selected:',selected);
   return (
     <>
-      <div className={classes.container}>
+      <div key={selected} className={classes.container}>
         <RequestList data={data} handleClick={handleClick} />
         <RequestDetail selectedHash={selected} binName={binName} />
       </div>
