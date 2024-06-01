@@ -19,3 +19,9 @@
     - this droplet worked (`npm run testdb` worked as expected) and was considerably more stable
 
 
+### May 31, 2024 notes
+- (almost 24 hrs later)
+- streamlined and re-built backend : currently deployed on dockerTest VPS
+  - /api/new route works, but there's no data in the db
+  - also, nginx needs to be fixed to allow access to backend to add requests
+
