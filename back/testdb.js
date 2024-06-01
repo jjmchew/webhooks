@@ -1,5 +1,5 @@
-const { usePg } = require('./postgres.js');
-const { useMongo } = require('./mongo.js');
+const { usePg } = require('./db/postgres.js');
+const { useMongo } = require('./db/mongo.js');
 
 const testPg = async () => {
   console.log('testing Postgres db');
