@@ -52,7 +52,7 @@ const isValidBin = async (binHash) => {
 // write selected request data to postgres db
 const putRequest = async (binHash, requestHash, data) => {
   const query = 'insert into requests (method, hostName, requestHash, binHash) values ($1, $2, $3, $4)';
-  const result = await pgQuery(query, data.method, data.headers.origin, requestHash, binHash);
+  const result = await pgQuery(query, data.method, data.hostname, requestHash, binHash);
   return result.rowCount === 1;
 };
 
