@@ -7,7 +7,7 @@ const util = require('../lib/utils.js');
 
 // test
 allRouter.all('/*', (req, res, next) => {
-  console.log('== allRouter /* :', req.subdomains, req.method);
+  console.log('== allRouter /* :', req.subdomains, req.method, req.path);
   if (req.subdomains.length === 0) {
     const newPath = path.join('/root/miniProj/front/dist/index.html');
     console.log('allRouter - no subdomains, passing to index.html', newPath);
