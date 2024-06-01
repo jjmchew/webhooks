@@ -42,6 +42,8 @@ allRouter.all('/*', async (req, res, next) => {
   if (req.subdomains.length === 0) routeToReact(res);
   else {
     try {
+      console.log('in try: ', req.method);
+      console.log('========== ');
       const result = await processBin(req);
       res.status(200).send(result);
     } catch (e) {
