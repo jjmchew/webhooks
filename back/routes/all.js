@@ -4,6 +4,16 @@ const { useMongo } = require('../db/mongo.js');
 const { usePg } = require('../db/postgres.js');
 const util = require('../lib/utils.js');
 
+// test
+allRouter.get('/*', (req, res) => {
+  console.log('allRouter get /* :', req.subdomains);
+  res.sendFile(path.join(_dirname, '../front/dist/index.html'), (err) => {
+    if (err) res.status(500).send(err)
+  });
+});
+
+
+
 // receives webhooks and stores them with appropriate binHash
 
 allRouter.all('/:binHash', async (req, res, next) => {
