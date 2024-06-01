@@ -5,6 +5,7 @@ const { useMongo } = require('../db/mongo.js');
 const { usePg } = require('../db/postgres.js');
 const util = require('../lib/utils.js');
 
+// helper functions
 const routeToReact = (res) => {
   const newPath = path.join('/root/miniProj/front/dist/index.html');
   console.log('routeToReact: ', newPath);
@@ -39,14 +40,16 @@ const processBin = async (req) => {
 allRouter.all('/*', async (req, res, next) => {
   console.log('== allRouter all /* :', req.subdomains, req.method, req.path);
   if (req.subdomains.length === 0) routeToReact(res);
-
-  try {
-    const result = await processBin(req);
-    res.status(200).send(result);
-  } catch (e) {
-    console.error('>>>>> allRouter error ', e.message);
-    next(e);
+  else {
+    try {
+      const result = await processBin(req);
+      res.status(200).send(result);
+    } catch (e) {
+      console.error('>>>>> allRouter error ', e.message);
+      next(e);
+    }
   }
+
 });
 
 
