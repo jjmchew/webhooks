@@ -5,7 +5,14 @@ const { useMongo } = require('../db/mongo.js');
 const { usePg } = require('../db/postgres.js');
 const util = require('../lib/utils.js');
 
+const routerFct = (req, res, next) => {
+  console.log('routerFct ', req.subdomains, req.method, req.path);
+  next();
+};
+
 // test
+allRouter.all('*', routerFct);
+
 allRouter.put('/*', (req, res, next) => {
   console.log('== allRouter put /* :', req.subdomains, req.method, req.path);
   next();
