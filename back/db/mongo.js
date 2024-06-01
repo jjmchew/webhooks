@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 
 const connectionString = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PW}@${process.env.MONGO_URL}/miniProj?authSource=admin`;
-const mongo = new MongoClient(connectionString);
+const mongo = new MongoClient(connectionString, { connectTimeoutMS: 30000}, { keepAlive: 1});
 
 // get all data in mongo db
 const getAll = async () => {
