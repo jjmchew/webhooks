@@ -11,7 +11,7 @@ const LandingPage = () => {
     try {
         const response = await fetch(url, {method: 'post'});
         const data = await response.json();
-        navigate(`/view/${data.name}`);
+        navigate(`/view/${data.binName}`);
     } catch (e) {
         console.log(e)
     }

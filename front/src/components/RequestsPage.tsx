@@ -19,13 +19,13 @@ const RequestsPage = () => {
       // console.log('RequestsPage: data', data)
       return data;
     } catch (error) {
-      console.log(error);
+      console.log('>>>>> makeRequest error', error);
     }
   };
 
   useEffect(() => {
     makeRequest().then(data => {
-      setAppData(data);
+      if (data) setAppData(data);
     });
   }, []);
 
