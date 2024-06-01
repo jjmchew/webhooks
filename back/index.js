@@ -9,8 +9,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use('/api', apiRouter);
 app.use('/', allRouter);
+app.use('/api', apiRouter);
 app.use(errorHandler);
 
 app.listen(process.env.PORT, () => {
