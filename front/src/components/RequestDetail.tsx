@@ -1,6 +1,7 @@
-// import classes from './RequestDetail.module.css';
+import classes from './RequestDetail.module.css';
 import { useEffect, useState } from 'react';
 import { baseURL } from '../utils.ts';
+import DisplayObject from './DisplayObject.tsx';
 
 interface RequestDetailProps {
   binName: string,
@@ -35,12 +36,20 @@ const RequestDetail = ({ binName, selectedHash }: RequestDetailProps) => {
     }
   }, [selectedHash]);
 
+  let content = null;
+  if (selectedHash) {
+    content = [
+      <h4>Headers</h4>,
+      <DisplayObject obj={selected.headers} />,
+      <div className={classes.spacer}></div>,
+      <h4>Body</h4>,
+      <DisplayObject obj={selected.body} />,
+    ];
+  }
   return (
-    <div>
+    <div className={classes.container}>
       <h1>Request Detail</h1>
-      {/* <Headers data={selected.headers}/> */}
-      {JSON.stringify(selected.headers)}
-      {JSON.stringify(selected.body)}
+      {content}
     </div>
   )
 };

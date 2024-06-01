@@ -1,36 +1,29 @@
 .container {
-  width: 40vw;
+  width: 50ch;
 }
 
 .rowWrap {
   display: flex;
   flex-direction: row;
-  width: 150%;
+  width: 50ch;
   align-items: baseline;
   cursor: pointer;
 }
 
-.time {
-  width: 20%;
-  font-size: 0.6rem;
+.date {
+  width: 21ch;
   /* overflow: hidden; */
 }
 
 .method {
-  width: 12%;
+  width: 8ch;
   color: blue;
 }
 
 .path {
   color: grey;
-  /* overflow: hidden; */
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.headers {
-  color: green;
-  /* overflow: hidden; */
-}
 
-.body {
-  /* overflow: hidden; */
-}

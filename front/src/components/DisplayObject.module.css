@@ -1,0 +1,13 @@
+.container {
+  margin-left: 2ch;
+}
+
+.row {
+  line-height: 1.2rem;
+  display: flex;
+}
+
+.key {
+  width: 20ch;
+  color: #7a7a7a;
+}

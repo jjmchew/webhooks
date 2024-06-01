@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import TopBar from './TopBar.tsx'
 import DisplayRequests from './DisplayRequests'
 import { useLocation } from 'react-router-dom'
-import { baseURL } from '../utils.ts';
+import { baseURL, baseDomain } from '../utils.ts';
 
 
 const RequestsPage = () => {
@@ -31,7 +31,7 @@ const RequestsPage = () => {
 
   return (
     <>
-      <TopBar url={`${baseURL}/${binName}`} />
+      <TopBar url={`https://${binName}.${baseDomain}`} />
       <DisplayRequests data={appData} binName={binName}/>
     </>
   );
