@@ -6,7 +6,7 @@ const { usePg } = require('../db/postgres.js');
 const util = require('../lib/utils.js');
 
 // test
-allRouter.get('/*', (req, res, next) => {
+allRouter.all('/*', (req, res, next) => {
   console.log('allRouter get /* :', req.subdomains);
   if (req.subdomains.length === 0) {
     const newPath = path.join('/root/miniProj/front/dist/index.html');
