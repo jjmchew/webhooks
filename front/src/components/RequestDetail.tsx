@@ -39,11 +39,11 @@ const RequestDetail = ({ binName, selectedHash }: RequestDetailProps) => {
   let content = null;
   if (selectedHash) {
     content = [
-      <h4>Headers</h4>,
-      <DisplayObject obj={selected.headers} />,
-      <div className={classes.spacer}></div>,
-      <h4>Body</h4>,
-      <DisplayObject obj={selected.body} />,
+      <h4 key={selected + 1}>Headers</h4>,
+      <DisplayObject key={selected + 2} obj={selected.headers} />,
+      <div key={selected + 3} className={classes.spacer}></div>,
+      <h4 key={selected + 4}>Body</h4>,
+      <DisplayObject key={selected + 5} obj={selected.body} />,
     ];
   }
   return (

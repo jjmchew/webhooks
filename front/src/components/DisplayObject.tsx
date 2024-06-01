@@ -7,7 +7,7 @@ const DisplayObject = ({ obj }: DisplayObjectProps) => {
   if (!obj) return null;
 
   const entryArray: [string, string][] = Object.entries(obj);
-  console.log('DisplayObject', entryArray);
+  // console.log('DisplayObject', entryArray);
 
   let content = entryArray.map(entry => {
     return (
