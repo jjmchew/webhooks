@@ -1,0 +1,16 @@
+server {
+
+  root /var/www/77345.site/html;
+  index index.html index.htm;
+
+  server_name 77345.site www.777345.site;
+
+  location / {
+    proxy_pass http://localhost:3000;
+    # try_files $uri $uri/ =404;
+  }
+
+  location /api/ {
+    proxy_pass http://localhost:3000;
+  }
+}
