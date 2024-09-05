@@ -1,12 +1,16 @@
-# mini project
+# Webhooks mini project
+- I had just been exposed to the idea of webhooks and wanted to better understand how they worked.
+- I also wanted to play around with generating dynamic sub-domains and using them as part of the app.
+- This project allowd me to do that and play around with deployment.
 
 ## Objectives
+- create a crude version of "request bin"
 - deploy a mini React project to a VPS which uses:
   - postgres
   - mongo db
   - react front end
 
-- this project is only intended to be a test demonstration of the various parts of the app working
+- get custom subdomains working as part of the bin URL
 
 ### May 31, 2024 notes
 - managed to deploy this project to Digital Ocean droplet (using containerized postgres and mongodb)
