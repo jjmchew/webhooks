@@ -79,3 +79,4 @@
 - nginx config for server blocks must be specifically defined to serve the SPA or reverse proxy for the appropriate domains / sub-domains
   - the updated `default` nginx config in `/config` more specifically addresses each type of request
   - also, needed to ensure the back-end did not serve static files (SPA) for "root" paths (e.g., GET requests to `https://https://1585-f1de-d788.example.com`). Otherwise, these GET requests to sub-domain "bins" will not be captured in the bin.
+  - nginx does not seem to assign the correct Content-Type header to proxied requests; note the addition of a specific `Content-Type: "application/json"` header to proxied requests.
