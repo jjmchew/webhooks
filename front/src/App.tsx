@@ -1,10 +1,10 @@
-import { Routes, Route } from 'react-router-dom'
-import LandingPage from './components/LandingPage.tsx'
-import RequestsPage from './components/RequestsPage.tsx'
-import './App.css'
-
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage.tsx";
+import RequestsPage from "./components/RequestsPage.tsx";
+import "./App.css";
 
 function App() {
+  console.log("hostname: ", window.location.hostname);
   return (
     <>
       <div>miniProj</div>
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

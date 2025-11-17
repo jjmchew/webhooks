@@ -1,5 +1,5 @@
-const baseURL = 'https://77345.site';
-const baseDomain = '77345.site';
+const baseURL = `https://${import.meta.env.VITE_DOMAIN_NAME}`;
+const baseDomain = import.meta.env.VITE_DOMAIN_NAME;
 
 const printDateTime = (datetimestr: string): string => {
   const dateObj = new Date(datetimestr);
@@ -7,8 +7,5 @@ const printDateTime = (datetimestr: string): string => {
   return timeStr.substring(0, 21);
 };
 
-export { 
-  baseURL,
-  baseDomain,
-  printDateTime
-};
+export { baseURL, baseDomain, printDateTime };
+
